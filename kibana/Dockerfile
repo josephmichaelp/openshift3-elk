@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
 # https://packages.elasticsearch.org/GPG-KEY-elasticsearch
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 46095ACC8548582C1A2699A9D27D666CD88E42B4
 
-ENV KIBANA_MAJOR 6.7
-ENV KIBANA_VERSION 6.7.1
+ENV KIBANA_MAJOR:latest
+ENV KIBANA_VERSION:latest
 
 RUN echo "deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main" > /etc/apt/sources.list.d/kibana.list
 
