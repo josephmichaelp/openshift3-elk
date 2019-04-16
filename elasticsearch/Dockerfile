@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.0.0
 
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
 # https://packages.elasticsearch.org/GPG-KEY-elasticsearch
@@ -6,7 +6,7 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 46095ACC85485
 
 ENV ELASTICSEARCH_MAJOR 7.0
 ENV ELASTICSEARCH_VERSION 7.0.0
-ENV ELASTICSEARCH_REPO_BASE docker.elastic.co/elasticsearch/elasticsearch:7.0.0
+ENV ELASTICSEARCH_REPO_BASE https://github.com/elastic/elasticsearch.git
 
 RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/elasticsearch.list
 
