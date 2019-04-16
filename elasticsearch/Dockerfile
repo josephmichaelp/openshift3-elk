@@ -1,5 +1,7 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:7.0.0
-FROM debian:wheezy
+FROM debian:jessie
+FROM java:8-jre
+
 
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
 # https://packages.elasticsearch.org/GPG-KEY-elasticsearch
