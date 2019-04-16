@@ -1,4 +1,5 @@
 FROM debian:jessie
+FROM docker.elastic.co/kibana/kibana:7.0.0
 
 # add our user and group first to make sure their IDs get assigned consistently
 RUN groupadd -r kibana && useradd -r -m -g kibana kibana
@@ -12,8 +13,8 @@ RUN apt-get update && apt-get install -y \
 # https://packages.elasticsearch.org/GPG-KEY-elasticsearch
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 46095ACC8548582C1A2699A9D27D666CD88E42B4
 
-ENV KIBANA_MAJOR:latest
-ENV KIBANA_VERSION:latest
+ENV KIBANA_MAJOR:7.0
+ENV KIBANA_VERSION:7.0.0
 
 RUN echo "deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main" > /etc/apt/sources.list.d/kibana.list
 
