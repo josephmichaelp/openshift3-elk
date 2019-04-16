@@ -6,6 +6,7 @@ FROM java:8-jre
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
 # https://packages.elasticsearch.org/GPG-KEY-elasticsearch
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 46095ACC8548582C1A2699A9D27D666CD88E42B4
+RUN apt-get install apt-transport-https
 
 ENV ELASTICSEARCH_MAJOR 7.0
 ENV ELASTICSEARCH_VERSION 7.0.0
